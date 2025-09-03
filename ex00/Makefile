@@ -3,7 +3,6 @@ NAME			=	ex00.out
 CXX				=	c++
 CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-# SRCS			=	$(wildcard *.cpp)
 SRCS			=	main.cpp ClapTrap.cpp
 
 OBJS_PATH		=	objs/
