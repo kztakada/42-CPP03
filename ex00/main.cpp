@@ -129,17 +129,43 @@ void testTakeDamage() {
     assert(claptrap.getEnergyPoints() == 9);
     assert(claptrap.getAttackDamage() == 0);
 
+    // for no Energy and no Hitpoints------------------------------
+    ClapTrap claptrap2("DamageBot2");
+
+    defaultHitPoints = claptrap2.getHitPoints();
+    unsigned int defaultEnergyPoints = claptrap2.getEnergyPoints();
+    damageAmount = 1;
+    // Test 10 times of take damage
+    for (int i = 0; i < 10; ++i) {
+        std::cout << "Attack attempt " << (i + 1) << ": ";
+        claptrap2.attack("target");
+        std::cout << "Damage attempt " << (i + 1) << ": ";
+        claptrap2.takeDamage(damageAmount);
+        assert(claptrap2.getHitPoints() ==
+               defaultHitPoints - (i + 1) * damageAmount);
+        assert(claptrap2.getEnergyPoints() == defaultEnergyPoints - (i + 1));
+        assert(claptrap2.getAttackDamage() == 0);
+    }
+    claptrap2.attack("target");
+    assert(claptrap2.getHitPoints() == 0);
+    assert(claptrap2.getEnergyPoints() == 0);
+    assert(claptrap2.getAttackDamage() == 0);
+    claptrap2.beRepaired(1);
+    assert(claptrap2.getHitPoints() == 0);
+    assert(claptrap2.getEnergyPoints() == 0);
+    assert(claptrap2.getAttackDamage() == 0);
+
     // use UNSIGNED_INT_MAX----------------------------------------
 
-    ClapTrap claptrap2("DamageBot2");
-    unsigned int damageAmount2 = std::numeric_limits<unsigned int>::max();
+    ClapTrap claptrap3("DamageBot3");
+    unsigned int damageAmount3 = std::numeric_limits<unsigned int>::max();
 
     // Test take damage until hit points are 0
     for (int i = 0; i < 10; ++i) {
-        claptrap2.takeDamage(damageAmount2);
-        assert(claptrap2.getHitPoints() == 0);
-        assert(claptrap2.getEnergyPoints() == 10);
-        assert(claptrap2.getAttackDamage() == 0);
+        claptrap3.takeDamage(damageAmount3);
+        assert(claptrap3.getHitPoints() == 0);
+        assert(claptrap3.getEnergyPoints() == 10);
+        assert(claptrap3.getAttackDamage() == 0);
     }
 
     printColored("Take Damage tests passed.");
