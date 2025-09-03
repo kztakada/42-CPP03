@@ -1,9 +1,9 @@
-NAME			=	ex02.out
+NAME			=	ex03.out
 
 CXX				=	c++
 CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-SRCS			=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS			=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS_PATH		=	objs/
 OBJS			=	$(SRCS:%.cpp=objs/%.o)
