@@ -5,9 +5,9 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap(), _name("") {
     ClapTrap::_name = _name + "_clap_name";
-    // this->_hitPoints = FragTrap::getHitPoints();
-    this->_energyPoints = 50;
-    // this->_attackDamage = FragTrap::getAttackDamage();
+    this->_hitPoints = FragTrap::_defaultHitPoints;
+    this->_energyPoints = ScavTrap::_defaultEnergyPoints;
+    this->_attackDamage = FragTrap::_defaultAttackDamage;
     std::stringstream ss;
     ss << "DiamondTrap " << this->_name << " default constructor called";
     this->_printColored(ss.str());
@@ -16,9 +16,9 @@ DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap(), _name("") {
 DiamondTrap::DiamondTrap(const std::string &name)
     : ClapTrap(name), ScavTrap(name), FragTrap(name), _name(name) {
     ClapTrap::_name = _name + "_clap_name";
-    // this->_hitPoints = FragTrap::getHitPoints();
-    this->_energyPoints = 50;
-    // this->_attackDamage = FragTrap::getAttackDamage();
+    this->_hitPoints = FragTrap::_defaultHitPoints;
+    this->_energyPoints = ScavTrap::_defaultEnergyPoints;
+    this->_attackDamage = FragTrap::_defaultAttackDamage;
     std::stringstream ss;
     ss << "DiamondTrap " << this->_name << " constructor called";
     this->_printColored(ss.str());

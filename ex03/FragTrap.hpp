@@ -15,6 +15,11 @@ class FragTrap : virtual public ClapTrap {
 
     void highFivesGuys(void);
 
+    protected:
+    static const int _defaultHitPoints = 100;
+    static const int _defaultEnergyPoints = 100;
+    static const int _defaultAttackDamage = 30;
+
    private:
     bool _canAction(void) const;
     void _printColored(const std::string &text) const;

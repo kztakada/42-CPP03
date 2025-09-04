@@ -14,6 +14,11 @@ class ScavTrap : virtual public ClapTrap {
     void attack(const std::string &target);
     void guardGate();
 
+   protected:
+    static const int _defaultHitPoints = 100;
+    static const int _defaultEnergyPoints = 50;
+    static const int _defaultAttackDamage = 20;
+
    private:
     bool _canAction(void) const;
     void _printColored(const std::string &text) const;
