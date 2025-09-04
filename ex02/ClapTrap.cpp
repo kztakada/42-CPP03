@@ -4,13 +4,19 @@
 #include <limits>
 
 ClapTrap::ClapTrap()
-    : _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+    : _name(""),
+      _hitPoints(this->_defaultHitPoints),
+      _energyPoints(this->_defaultEnergyPoints),
+      _attackDamage(this->_defaultAttackDamage) {
     std::cout << "ClapTrap " << this->_name << " default constructor called"
               << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name)
-    : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+    : _name(name),
+      _hitPoints(this->_defaultHitPoints),
+      _energyPoints(this->_defaultEnergyPoints),
+      _attackDamage(this->_defaultAttackDamage) {
     std::cout << "ClapTrap " << this->_name << " constructor called"
               << std::endl;
 }

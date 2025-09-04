@@ -4,18 +4,18 @@
 #include <sstream>
 
 ScavTrap::ScavTrap() : ClapTrap() {
-    this->_hitPoints = 100;
-    this->_energyPoints = 50;
-    this->_attackDamage = 20;
+    this->_hitPoints = this->_defaultHitPoints;
+    this->_energyPoints = this->_defaultEnergyPoints;
+    this->_attackDamage = this->_defaultAttackDamage;
     std::stringstream ss;
     ss << "ScavTrap " << this->_name << " default constructor called";
     this->_printColored(ss.str());
 }
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
-    this->_hitPoints = 100;
-    this->_energyPoints = 50;
-    this->_attackDamage = 20;
+    this->_hitPoints = this->_defaultHitPoints;
+    this->_energyPoints = this->_defaultEnergyPoints;
+    this->_attackDamage = this->_defaultAttackDamage;
     std::stringstream ss;
     ss << "ScavTrap " << this->_name << " constructor called";
     this->_printColored(ss.str());

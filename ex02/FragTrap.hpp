@@ -18,6 +18,10 @@ class FragTrap : public ClapTrap {
    private:
     bool _canAction(void) const;
     void _printColored(const std::string &text) const;
+
+    static const int _defaultHitPoints = 100;
+    static const int _defaultEnergyPoints = 100;
+    static const int _defaultAttackDamage = 30;
 };
 
 #endif /* FRAGTRAP_HPP */

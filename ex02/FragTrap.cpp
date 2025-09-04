@@ -4,18 +4,18 @@
 #include <sstream>
 
 FragTrap::FragTrap() : ClapTrap() {
-    this->_hitPoints = 100;
-    this->_energyPoints = 100;
-    this->_attackDamage = 30;
+    this->_hitPoints = this->_defaultHitPoints;
+    this->_energyPoints = this->_defaultEnergyPoints;
+    this->_attackDamage = this->_defaultAttackDamage;
     std::stringstream ss;
     ss << "FragTrap " << this->_name << " default constructor called";
     this->_printColored(ss.str());
 }
 
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
-    this->_hitPoints = 100;
-    this->_energyPoints = 100;
-    this->_attackDamage = 30;
+    this->_hitPoints = this->_defaultHitPoints;
+    this->_energyPoints = this->_defaultEnergyPoints;
+    this->_attackDamage = this->_defaultAttackDamage;
     std::stringstream ss;
     ss << "FragTrap " << this->_name << " constructor called";
     this->_printColored(ss.str());

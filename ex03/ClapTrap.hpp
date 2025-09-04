@@ -27,6 +27,10 @@ class ClapTrap {
 
    private:
     bool _canAction(void) const;
+
+    static const int _defaultHitPoints = 10;
+    static const int _defaultEnergyPoints = 10;
+    static const int _defaultAttackDamage = 0;
 };
 
 #endif /* CLAPTRAP_HPP */
